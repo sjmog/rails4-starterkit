@@ -1,38 +1,14 @@
-= Rails 4.1 Starter Kit
+= LoveMeBeauty System
 
-Bootstrap 3 / Foundation 5 + CoffeeScript + Sass + Devise + everything else you need to get into production, fast.
-
-= Overview
-
-Rails 4.1 Starter Kit is a starter app with production ready performance, security, and authentication.
-
-This project was extracted from several apps running in production over the past couple of years and upgraded to Rails 4.1.
-
-Unlike most starter apps that focus on kick starting development, Rails 4.1 Starter Kit is opinionated and production ready.
-It combines the best gems, best practices, and optimized configuration to minimize common mistakes and repetitious
-framework setup.
-
-Beyond configuration and tests, the bulk of Rails 4.1 Starter Kit code is the authentication flows.
-The app provides well designed UX flows for social logins (Facebook, Twitter, etc.) as well as connecting additional
-accounts after sign up.
+The eCommerce, Admin, and Analytics system for LoveMeBeauty.
 
 
-== Demo
+== Staging
 
-{Demo}[https://rails4-starterkit.herokuapp.com] — Bootstrap 3
-
-{Email Template Preview}[https://rails4-starterkit.herokuapp.com/p/email?premail=true&layout=email] — with inline CSS via Premailer
+{Staging Server}[https://lmb-staging.herokuapp.com]
 
 
-== Status
-
-* *Configuration*: excellent — all configuration keys are in one file and overridable with ENV vars
-* *Development*: good — support for Zeus and Spring
-* *Test*: fair — 65% code coverage; auth flows need more tests
-* *Production*: good — used in several production apps
-
-
-== Features
+== Technical Features
 
 <b>UI/UX</b>
 * Turbolinks[https://github.com/rails/turbolinks] — fast page rendering; configured to place nice with HeadJS, AJAX, etc.
@@ -309,17 +285,4 @@ Rails 4.1 introduced mailer previews. Starter Kit now has two ways to preview em
 
 Mail previews are only available in development by default. To make Starter Kit previews
 available in other environments, set the ALLOW_EMAIL_PREVIEW='1'.
-
-
-= TODO
-
-* Add code comments for rdoc
-* Add examples for adding User#username field
-* Setup Rack::Cache https://devcenter.heroku.com/articles/rack-cache-memcached-rails31
-* Install Devise Security Extension https://github.com/phatworx/devise_security_extension
-* Review config/initializers/devise.rb in detail
-* Convert to lazy registration https://github.com/mwlang/lazy_registration_demos
-* Use decorators https://github.com/drapergem/draper
-* Make sure rspecs follow best practices: http://betterspecs.org/
-* Run should_clean -d spec/
 
