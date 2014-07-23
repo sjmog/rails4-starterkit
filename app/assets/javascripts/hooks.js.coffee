@@ -12,7 +12,7 @@
 #
 #= require jquery_2
 #= require jquery_ujs
-#= require prefixfree.min
+#= require vendor/prefixfree.min
 #= require overrides_base
 #= require jquery.scrollto
 #= require dropzone
