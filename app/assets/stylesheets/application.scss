@@ -5,9 +5,15 @@
 
 //= require_self
 
+// Bourbon, Neat, and Bitters
+@import "bourbon";
+@import "neat";
+@import "bitters/bitters";
+
 // Core
 @import "variables";
-@import "bootstrap";
+@import "foundation";
+@import "foundation-icons";
 @import "icons_social";
 @import "auth";
 @import "avatar";
@@ -15,19 +21,35 @@
 @import "footer";
 @import "hacks";
 
+// Fontawesome
+@import "font-awesome";
+
+// Models
+
 // Plugins
 @import 'nprogress';
 @import 'nprogress-bootstrap';
+@import 'jquery.minicolors';
+@import 'dropzone/dropzone';
 
+// Components
+@import 'components/unsorted';
 
+// Project-specific overrides
+@import 'sitewide';
+@import 'layouts';
+@import 'forms';
+@import 'overrides';
+@import 'typography';
 
 //
 // Minor Tweaks
 //
 
 // Padding to clear fixed nav
+
 body {
-  padding-top: 70px;
+
 }
 
 // Make sure alerts are nicely formatted
@@ -41,4 +63,6 @@ body {
 #nprogress .spinner {
   bottom: 15px;
   top: auto;
+  right:15px;
+  left:auto;
 }

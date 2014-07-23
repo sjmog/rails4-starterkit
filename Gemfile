@@ -1,3 +1,4 @@
+source 'https://code.stripe.com'
 source 'https://rubygems.org'
 ruby '2.1.0'
 
@@ -13,7 +14,8 @@ gem 'terminal-notifier', group: [:development]
 # LINUX
 # gem 'rb-inotify', :group => [:development, :test]   # monitor file changes without hammering the disk
 
-
+# Tracking analytics
+gem 'impressionist'
 
 # Monitoring
 gem 'rack-timeout', '~> 0.1.0beta3'
@@ -24,7 +26,7 @@ gem 'airbrake'                # use with airbrake.io or errbit
 
 # Data
 gem 'pg'
-gem 'schema_plus'             # add better index and foreign key support
+# gem 'schema_plus'             # add better index and foreign key support
 # gem 'jbuilder'
 
 # Assets
@@ -47,10 +49,14 @@ gem 'coffee-rails'
 # gem 'therubyracer', platforms: :ruby
 
 # Design
-gem 'bootstrap-sass'
-# gem 'bourbon'
-# gem 'neat'
+gem 'foundation-rails'
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
+gem 'refills'
+gem 'font-awesome-rails'
 # gem 'country_select'
+gem 'jquery-minicolors-rails'
 
 # Email
 gem 'premailer-rails'
@@ -72,6 +78,9 @@ gem 'rails_admin'
 gem 'sidekiq'
 gem 'devise-async'
 gem 'sinatra', require: false
+
+# Payment
+gem 'stripe'
 
 # Utils
 gem 'addressable'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204233952) do
+ActiveRecord::Schema.define(version: 20140723104823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,18 +28,45 @@ ActiveRecord::Schema.define(version: 20140204233952) do
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["provider"], :name => "index_authentications_on_provider"
-    t.index ["user_id"], :name => "fk__authentications_user_id"
   end
+
+  add_index "authentications", ["provider"], name: "index_authentications_on_provider", using: :btree
+  add_index "authentications", ["user_id"], name: "fk__authentications_user_id", using: :btree
+
+  create_table "impressions", force: true do |t|
+    t.string   "impressionable_type"
+    t.integer  "impressionable_id"
+    t.integer  "user_id"
+    t.string   "controller_name"
+    t.string   "action_name"
+    t.string   "view_name"
+    t.string   "request_hash"
+    t.string   "ip_address"
+    t.string   "session_hash"
+    t.text     "message"
+    t.text     "referrer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", using: :btree
+  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
   create_table "oauth_caches", id: false, force: true do |t|
     t.integer  "authentication_id", null: false
     t.text     "data_json",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["authentication_id"], :name => "fk__oauth_caches_authentication_id"
-    t.index ["authentication_id"], :name => "index_oauth_caches_on_authentication_id"
   end
+
+  add_index "oauth_caches", ["authentication_id"], name: "fk__oauth_caches_authentication_id", using: :btree
+  add_index "oauth_caches", ["authentication_id"], name: "index_oauth_caches_on_authentication_id", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
@@ -50,8 +77,9 @@ ActiveRecord::Schema.define(version: 20140204233952) do
     t.integer  "year",       limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
   end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -77,11 +105,11 @@ ActiveRecord::Schema.define(version: 20140204233952) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_admin"
-    t.index ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
-    t.index ["email"], :name => "index_users_on_email", :unique => true, :case_sensitive => false
-    t.index ["is_admin"], :name => "index_users_on_is_admin"
-    t.index ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-    t.index ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
   end
+
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["is_admin"], name: "index_users_on_is_admin", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
 end

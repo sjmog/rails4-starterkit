@@ -9,7 +9,7 @@ common: &common
   # Downcased and trimmed app name for namespaces.
   # Safest to start with a letter rather than a number.
   # See locales/en.yml for setting your app's user facing brand name.
-  app_name: 'starterkit'
+  app_name: 'LoveMeBeauty'
 
   social:
     facebook: 'https://www.facebook.com/simple10'
@@ -18,11 +18,11 @@ common: &common
     linkedin: 'http://www.linkedin.com/in/startupjoe'
 
   contact:
-    email: 'joe@example.com'
+    email: 'sam@lovemebeauty.com'
     phone: '555-555-5555'
 
   session:
-    key: '_starterkit_session'
+    key: '_lmb_session'
     expire_after: <%= 30.days %>
 
   rack:
@@ -31,7 +31,7 @@ common: &common
 
   mail:
     layout: 'emails/email'
-    from: 'from@example.com'
+    from: 'hello@lovemebeauty.com'
 
 
 # Default ENV vars.
@@ -43,7 +43,7 @@ default_env: &default_env
 
   # Host used to determine direct requests vs CDN.
   # See RobotsController.
-  CANONICAL_HOST: 'rails4-starterkit.herokuapp.com'
+  CANONICAL_HOST: 'lmb.herokuapp.com'
 
   AUTH_FACEBOOK_KEY: '201539556694091'
   AUTH_FACEBOOK_SECRET: '80ae1dc93961b7f9a79265af0eeca698'
@@ -65,8 +65,14 @@ default_env: &default_env
   REDIS_URL: 'redis://localhost:6379/0'
 
   # Airbrake/Errbit configuration
-  AIRBRAKE_API_KEY: ''
+  AIRBRAKE_API_KEY: '5d1598e791c0da45858a0961031b37f6'
   AIRBRAKE_HOST: ''
+
+  # Twitter details
+  CONSUMER_KEY: 'znlHU6eMZpHZe8nexSXa6mjCy'
+  CONSUMER_SECRET: 'F9GLYVeLdtV2qhvNRugzfD9g0qUUHb52Qa2VptRIEws32EVZo5'
+  ACCESS_TOKEN: '391482739-DSaZtKTL9c0EpCHiVONb91Es8OW5YsP1bpJBS8RI'
+  ACCESS_SECRET: '9CE1DxpQYNFf3rzNhWLN0zB7wvOSnP0yFm32FgAGzEfEf'
 
 
 development:

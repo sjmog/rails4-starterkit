@@ -1,4 +1,5 @@
 GEM
+  remote: https://code.stripe.com/
   remote: https://rubygems.org/
   specs:
     actionmailer (4.1.0)
@@ -36,8 +37,13 @@ GEM
     bcrypt (3.1.7)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.1.1.0)
+    bitters (0.9.5)
+      bourbon (>= 3.1)
+      sass (>= 3.2)
+      thor
+    bourbon (3.2.3)
       sass (~> 3.2)
+      thor
     builder (3.2.2)
     byebug (2.7.0)
       columnize (~> 0.3)
@@ -97,6 +103,9 @@ GEM
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
+    foundation-rails (5.2.2.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     guard (2.6.0)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -118,7 +127,14 @@ GEM
       rails (>= 3.0.0)
     hike (1.2.3)
     htmlentities (4.3.1)
+    httpclient (2.3.4.1)
     i18n (0.6.9)
+    impressionist (1.5.1)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
+    jquery-minicolors-rails (2.1.4.0)
+      jquery-rails
+      rails (>= 3.2.8)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -151,7 +167,11 @@ GEM
     multi_json (1.9.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    neat (1.5.1)
+      bourbon (>= 3.1)
+      sass (~> 3.2.19)
     nested_form (0.3.2)
+    netrc (0.7.7)
     newrelic_rpm (3.7.3.204)
     nio4r (1.0.0)
     nokogiri (1.6.1)
@@ -256,7 +276,11 @@ GEM
     redis (3.0.7)
     redis-namespace (1.4.1)
       redis (~> 3.0.4)
+    refills (0.0.2)
     remotipart (1.2.1)
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -283,9 +307,6 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    schema_plus (1.5.0)
-      activerecord (>= 3.2)
-      valuable
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
@@ -323,6 +344,10 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    stripe (1.14.0)
+      json (~> 1.8.1)
+      mime-types (~> 1.25)
+      rest-client (~> 1.4)
     terminal-notifier (1.6.0)
     terminal-notifier-guard (1.5.3)
     thor (0.19.1)
@@ -343,7 +368,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    valuable (0.9.8)
     warden (1.2.3)
       rack (>= 1.0)
     xpath (2.0.0)
@@ -356,7 +380,8 @@ DEPENDENCIES
   addressable
   airbrake
   awesome_print
-  bootstrap-sass
+  bitters
+  bourbon
   cancan
   capybara-webkit
   coffee-rails
@@ -366,13 +391,18 @@ DEPENDENCIES
   devise-async
   factory_girl_rails
   ffaker
+  font-awesome-rails
+  foundation-rails
   guard-rspec
   haml-rails
   headjs-rails
+  impressionist
+  jquery-minicolors-rails
   jquery-rails
   jquery-turbolinks
   memcachier
   minitest
+  neat
   newrelic_rpm
   nprogress-rails
   omniauth
@@ -389,10 +419,10 @@ DEPENDENCIES
   rails_12factor
   rails_admin
   rb-fsevent
+  refills
   rspec-rails
   rspec-sidekiq
   sass-rails
-  schema_plus
   sdoc
   settingslogic
   shoulda-matchers
@@ -402,6 +432,7 @@ DEPENDENCIES
   sinatra
   spring
   spring-commands-rspec
+  stripe
   terminal-notifier
   terminal-notifier-guard
   turbolinks
