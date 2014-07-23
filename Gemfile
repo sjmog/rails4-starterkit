@@ -61,6 +61,11 @@ gem 'jquery-minicolors-rails'
 # Email
 gem 'premailer-rails'
 
+# Uploads
+gem 'fog'
+gem 'carrierwave'
+gem 'dropzonejs-rails'
+
 # Authentication
 gem 'devise'
 gem 'cancan'
@@ -70,6 +75,9 @@ gem 'omniauth-twitter'
 # gem 'omniauth-persona'
 # gem 'omniauth-google-oauth2'
 # gem 'omniauth-linkedin'
+
+# Social feeds
+gem 'twitter'
 
 # Admin
 gem 'rails_admin'

@@ -30,9 +30,6 @@ ActiveRecord::Schema.define(version: 20140723104823) do
     t.datetime "updated_at"
   end
 
-  add_index "authentications", ["provider"], name: "index_authentications_on_provider", using: :btree
-  add_index "authentications", ["user_id"], name: "fk__authentications_user_id", using: :btree
-
   create_table "impressions", force: true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
@@ -65,7 +62,6 @@ ActiveRecord::Schema.define(version: 20140723104823) do
     t.datetime "updated_at"
   end
 
-  add_index "oauth_caches", ["authentication_id"], name: "fk__oauth_caches_authentication_id", using: :btree
   add_index "oauth_caches", ["authentication_id"], name: "index_oauth_caches_on_authentication_id", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
@@ -107,9 +103,6 @@ ActiveRecord::Schema.define(version: 20140723104823) do
     t.boolean  "is_admin"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["is_admin"], name: "index_users_on_is_admin", using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
 end

@@ -30,6 +30,7 @@
 #= require imagesloaded
 #= require avatar.errors
 
-$(function(){ $(document).foundation(); });
+# Run init scripts
+#= require init
 
 

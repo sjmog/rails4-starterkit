@@ -1,24 +1,52 @@
 //
-// Put application and Bootstrap variables in this file.
+// Put application and framework variables in this file.
 //
 
-// Refer to _variables.scss in bootstrap-sass gem
-//$ bundle open bootstrap-sass
-
-// Example:
-// $font-size-base: 20px;
-
-// Tighten up grid padding.
-$grid-gutter-width: 20px;
-
-// Don't collapse until screen is 480px or smaller.
-// This effects when the topnav collapses.
-$grid-float-breakpoint: 480px;
-
-// Import bootstrap variables to make all variables available from this file.
+// Import Foundation variables to make all variables available from this file.
 // Useful for situations where only this file is imported.
-@import "bootstrap/variables";
+@import "foundation/settings";
+@import "foundation/components/global";
 
+//rhythms
 
-$avatar-background-color: $gray-light;
-$avatar-default-color: darken($avatar-background-color, 20%);
+$vertical-rhythm: 50px;
+
+//site colours
+
+$col1: #000;
+$col2: #000;
+$col3: #000;
+$col4: #000;
+$col5: #000;
+$col6: #000;
+$col7: #000;
+$col8: #000;
+
+$link-color: #FF0000;
+
+$avatar-background-color: #333;
+$avatar-default-color: #FFF;
+
+//social colours
+
+$facebook-color: #3B5998;
+$twitter-color: #55ACEE;
+$linkedin-color: #0976b4;
+
+//typography
+
+$font1: 'Big Freight Pro', Garamond, serif;
+$font2: 'Karla', Arial, sans-serif;
+
+$font-size-base: 16px;
+
+//component sizes
+
+$small-component-height: 48px;
+$normal-component-height: 180px;
+$large-component-height: 320px;
+
+//borders
+
+$border-width: 3px;
+$border-radius: 6px;

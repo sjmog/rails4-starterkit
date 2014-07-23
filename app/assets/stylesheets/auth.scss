@@ -43,12 +43,12 @@
 
 .auth__or {
   position: relative;
-  font-size: $font-size-h4;
-  color: darken($gray-lighter, 15%);
+  font-size: $font-size-base*1.2;
+  color: darken($col1, 15%);
   margin: 20px 0;
   padding: 10px 0;
   hr {
-    background-color: darken($gray-lighter, 10%);
+    background-color: darken($col1, 10%);
     height: 1px;
     margin-top: 0px !important;
     margin-bottom: 0px !important;

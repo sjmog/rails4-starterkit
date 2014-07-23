@@ -5,15 +5,17 @@
 
 //= require_self
 
+// Variables
+@import 'variables';
+
 // Bourbon, Neat, and Bitters
 @import "bourbon";
 @import "neat";
-@import "bitters/bitters";
+//@import "bitters/bitters";
 
 // Core
-@import "variables";
+@import "foundation_and_overrides";
 @import "foundation";
-@import "foundation-icons";
 @import "icons_social";
 @import "auth";
 @import "avatar";
